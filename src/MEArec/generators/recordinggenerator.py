@@ -218,6 +218,8 @@ class RecordingGenerator:
                 self._is_tmp_folder_local = False
             else:
                 self.tmp_folder = Path(self.tmp_folder)
+                if not self.tmp_folder.is_dir():
+                    self.tmp_folder.mkdir()
                 self._is_tmp_folder_local = True
         else:
             self._is_tmp_folder_local = False
